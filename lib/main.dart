@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: AppBar(title: const Text('Menu')),
       /*body: const Center(
         child: Text('Good Morning bruhva !'),
       ),*/
@@ -96,10 +96,16 @@ class MyHomePage extends StatelessWidget {
 
   void selectedItem(BuildContext context, int index) {
     switch (index) {
+      case 0:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const HomePage(),
+        ));
+        break;
       case 1:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const AccountPage(),
         ));
+        break;
     }
   }
 }
