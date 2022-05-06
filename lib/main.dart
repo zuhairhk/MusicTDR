@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_tdr/page/home_page.dart';
+import 'package:music_tdr/page/account_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -6,7 +8,6 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   static const appTitle = 'MusicTDR';
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,17 +15,11 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: appTitle),
       theme: ThemeData(
         brightness: Brightness.light,
-        /* light theme settings */
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        /* dark theme settings */
       ),
       themeMode: ThemeMode.dark,
-      /* ThemeMode.system to follow system theme, 
-         ThemeMode.light for light theme, 
-         ThemeMode.dark for dark theme
-      */
       debugShowCheckedModeBanner: false,
     );
   }
@@ -103,7 +98,7 @@ class MyHomePage extends StatelessWidget {
     switch (index) {
       case 1:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => AccountPage(),
+          builder: (context) => const AccountPage(),
         ));
     }
   }
