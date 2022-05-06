@@ -30,32 +30,31 @@ class MyHomePage extends StatelessWidget {
   final String title;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Menu')),
-      /*body: const Center(
-        child: Text('Good Morning bruhva !'),
-      ),*/
-      drawer: Drawer(
-          child: Material(
-        //padding: EdgeInsets.zero,
-        color: const Color.fromRGBO(0, 0, 0, 1),
-        child: ListView(
-          children: <Widget>[
-            const SizedBox(height: 48),
-            buildMenuItem(
-              text: 'Home',
-              icon: Icons.home,
-              onClicked: () => selectedItem(context, 0),
-            ),
-            const SizedBox(height: 18),
-            buildMenuItem(
-              text: 'Account',
-              icon: Icons.account_box,
-              onClicked: () => selectedItem(context, 1),
-            ),
-          ],
-          /*children: [
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text('Home'),
+          centerTitle: true,
+        ),
+        drawer: Drawer(
+            child: Material(
+          //padding: EdgeInsets.zero,
+          color: const Color.fromRGBO(0, 0, 0, 1),
+          child: ListView(
+            children: <Widget>[
+              const SizedBox(height: 48),
+              buildMenuItem(
+                text: 'Home',
+                icon: Icons.home,
+                onClicked: () => selectedItem(context, 0),
+              ),
+              const SizedBox(height: 18),
+              buildMenuItem(
+                text: 'Account',
+                icon: Icons.account_box,
+                onClicked: () => selectedItem(context, 1),
+              ),
+            ],
+            /*children: [
             DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blueAccent,
@@ -73,39 +72,39 @@ class MyHomePage extends StatelessWidget {
               },
             ),
           ],*/
-        ),
-      )),
-    );
-  }
+          ),
+        )),
+      );
+}
 
-  Widget buildMenuItem({
-    required String text,
-    required IconData icon,
-    VoidCallback? onClicked,
-  }) {
-    final color = Colors.white;
-    final hoverColor = Colors.white12;
+Widget buildMenuItem({
+  required String text,
+  required IconData icon,
+  VoidCallback? onClicked,
+}) {
+  final color = Colors.white;
+  final hoverColor = Colors.white12;
 
-    return ListTile(
-      leading: Icon(icon, color: color),
-      title: Text(text, style: TextStyle(color: color)),
-      hoverColor: hoverColor,
-      onTap: onClicked,
-    );
-  }
+  return ListTile(
+    leading: Icon(icon, color: color),
+    title: Text(text, style: TextStyle(color: color)),
+    hoverColor: hoverColor,
+    onTap: onClicked,
+  );
+}
 
-  void selectedItem(BuildContext context, int index) {
-    switch (index) {
-      case 0:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const HomePage(),
-        ));
-        break;
-      case 1:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const AccountPage(),
-        ));
-        break;
-    }
+void selectedItem(BuildContext context, int index) {
+  switch (index) {
+    case 0:
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ));
+      break;
+    case 1:
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const AccountPage(),
+      ));
+      break;
   }
 }
+//}

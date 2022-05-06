@@ -8,7 +8,7 @@ class AccountPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Personal Account'),
           centerTitle: true,
-          backgroundColor: Colors.black87,
+          //backgroundColor: Colors.black87,
         ),
       );
 }

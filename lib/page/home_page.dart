@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Home'),
           centerTitle: true,
-          backgroundColor: Colors.black12,
+          //backgroundColor: Colors.black12,
         ),
       );
 }
